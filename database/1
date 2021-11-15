@@ -1,0 +1,19 @@
+{
+    "image": "1.png",
+    "tokenId": 1,
+    "name": "PTCO",
+    "attributes": [
+        {
+            "trait_type": "Background",
+            "value": "Rainbow"
+        },
+        {
+            "trait_type": "Head",
+            "value": "Brain Transplant"
+        },
+        {
+            "trait_type": "Body",
+            "value": "Space Wizard"
+        }
+    ]
+}

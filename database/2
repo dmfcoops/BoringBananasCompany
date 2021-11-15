@@ -1,0 +1,19 @@
+{
+    "image": "2.png",
+    "tokenId": 2,
+    "name": "PTCO",
+    "attributes": [
+        {
+            "trait_type": "Background",
+            "value": "Yellow"
+        },
+        {
+            "trait_type": "Head",
+            "value": "Arrow"
+        },
+        {
+            "trait_type": "Body",
+            "value": "! Vibe"
+        }
+    ]
+}

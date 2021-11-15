@@ -1,0 +1,19 @@
+{
+    "image": "4.png",
+    "tokenId": 4,
+    "name": "PTCO",
+    "attributes": [
+        {
+            "trait_type": "Background",
+            "value": "Orange"
+        },
+        {
+            "trait_type": "Head",
+            "value": "Brain Transplant"
+        },
+        {
+            "trait_type": "Body",
+            "value": "Skandi Jumper"
+        }
+    ]
+}

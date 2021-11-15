@@ -2,21 +2,21 @@ import {INFURA_ADDRESS, ADDRESS, ABI} from "../../config.js"
 import Web3 from "web3";
 
 // import the json containing all metadata. not recommended, try to fetch the database from a middleware if possible, I use MONGODB for example
-import traits from "../../database/traitsfinal.json";
+import traits from "../../database/all-traits.json";
 
 const infuraAddress = INFURA_ADDRESS
 
-const bananaApi = async(req, res) => {
+const pandimensionalApi = async(req, res) => {
 
     // SOME WEB3 STUFF TO CONNECT TO SMART CONTRACT
   const provider = new Web3.providers.HttpProvider(infuraAddress)
   const web3infura = new Web3(provider);
-  const bananaContract = new web3infura.eth.Contract(ABI, ADDRESS)
+  const pandimensionalContract = new web3infura.eth.Contract(ABI, ADDRESS)
   
 
 
   // IF YOU ARE USING INSTA REVEAL MODEL, USE THIS TO GET HOW MANY NFTS ARE MINTED
-//   const totalSupply = await bananaContract.methods.totalSupply().call();
+//   const totalSupply = await pandimensionalContract.methods.totalSupply().call();
 //   console.log(totalSupply)
   
 
@@ -27,16 +27,16 @@ const bananaApi = async(req, res) => {
 
   // IF YOU ARE USING INSTA REVEAL MODEL, UNCOMMENT THIS AND COMMENT THE TWO LINES BELOW
 //   if(parseInt(query) < totalSupply) {
-  const totalBananas = 8888;
-  if(parseInt(query) < totalBananas) {
+  const totalPandimensionals = 5;
+  if(parseInt(query) < totalPandimensionals) {
 
 
     // CALL CUSTOM TOKEN NAME IN THE CONTRACT
-    const tokenNameCall = await bananaContract.methods.bananaNames(query).call();
+    const tokenNameCall = await pandimensionalContract.methods.pandimensionalNames(query).call();
     let tokenName = `#${query}${(tokenNameCall === '') ? "" : ` - ${tokenNameCall}`}`
 
     // IF YOU ARE NOT USING CUSTOM NAMES, JUST USE THIS
-    // let tokenName= `#${query}`
+    let tokenName= `#${query}`
 
     
     
@@ -51,47 +51,38 @@ const bananaApi = async(req, res) => {
     
       metadata = {
         "name": tokenName,
-        "description": "BoringBananasCo is a community-centered enterprise focussed on preserving our research about the emerging reports that several banana species have begun exhibiting strange characteristics following the recent worldwide pandemic. Our research team located across the globe has commenced efforts to study and document these unusual phenomena. Concerned about parties trying to suppress our research, the team has opted to store our findings on the blockchain to prevent interference. Although this is a costly endeavour, our mission has never been clearer. The fate of the world's bananas depends on it.",
+        "description": "Pandimensional Trading Co. is a community-centered enterprise focussed on preserving our research about the emerging reports that several pandimensional species have begun exhibiting strange characteristics following the recent worldwide pandemic. Our research team located across the globe has commenced efforts to study and document these unusual phenomena. Concerned about parties trying to suppress our research, the team has opted to store our findings on the blockchain to prevent interference. Although this is a costly endeavour, our mission has never been clearer. The fate of the world's Pandimensionals depends on it.",
         "tokenId" : parseInt(query),
         "image": `https://gateway.pinata.cloud/ipfs/${trait["imageIPFS"]}`,
-        "external_url":"https://www.boringbananas.co",
+        "external_url":"https://www.pandimensional.io",
         "attributes": [   
           {
-            "trait_type": "Signature Series",
-            "value": trait["Signature Series"]
+            "trait_type": "Phanackapans",
+            "value": trait["Phanackapans"]
           }    
         ]
       }
       // console.log(metadata)
     } else {
-    // GENERAL BANANA METADATA
+    // GENERAL pandimensional METADATA
       metadata = {
         "name": tokenName,
-        "description": "BoringBananasCo is a community-centered enterprise focussed on preserving our research about the emerging reports that several banana species have begun exhibiting strange characteristics following the recent worldwide pandemic. Our research team located across the globe has commenced efforts to study and document these unusual phenomena. Concerned about parties trying to suppress our research, the team has opted to store our findings on the blockchain to prevent interference. Although this is a costly endeavour, our mission has never been clearer. The fate of the world's bananas depends on it.",
+        "description": "PandimensionalsCo is a community-centered enterprise focussed on preserving our research about the emerging reports that several pandimensional species have begun exhibiting strange characteristics following the recent worldwide pandemic. Our research team located across the globe has commenced efforts to study and document these unusual phenomena. Concerned about parties trying to suppress our research, the team has opted to store our findings on the blockchain to prevent interference. Although this is a costly endeavour, our mission has never been clearer. The fate of the world's Pandimensionals depends on it.",
         "tokenId" : parseInt(query),
         "image": `https://gateway.pinata.cloud/ipfs/${trait["imageIPFS"]}`,
-        "external_url":"https://www.boringbananas.co",
+        "external_url":"https://www.Pandimensionals.co",
         "attributes": [          
             {
               "trait_type": "Background",
               "value": trait["Background"]
             },
             {
-              "trait_type": "Banana Base",
-              "value": trait["Banana Base"]
+              "trait_type": "Head",
+              "value": trait["Head"]
             },
             {
-              "trait_type": "Mouth",
-              "value": trait["Mouth"]
-            },
-            {
-              "trait_type": "Eyes",
-              "value": trait["Eyes"]
-            },
-            {
-              "trait_type": "Head Gear",
-              "value": trait["Head Gear"]
-            },
+              "trait_type": "Body",
+              "value": trait["Body"]
     
         ]
       }
@@ -104,7 +95,7 @@ const bananaApi = async(req, res) => {
     res.json(metadata)
   } else {
     res.statuscode = 404
-    res.json({error: "The banana you requested is out of range"})
+    res.json({error: "The Pandimensional you requested is out of range"})
 
   }
 
@@ -114,4 +105,4 @@ const bananaApi = async(req, res) => {
   
 }
 
-export default bananaApi
+export default pandimensionalApi

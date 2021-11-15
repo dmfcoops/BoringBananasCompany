@@ -12,9 +12,9 @@ export default function Mint() {
   const [walletAddress, setWalletAddress] = useState(null)
 
   // FOR MINTING
-  const [how_many_bananas, set_how_many_bananas] = useState(1)
+  const [how_many_pandimensionals, set_how_many_pandimensionals] = useState(1)
 
-  const [bananaContract, setBananaContract] = useState(null)
+  const [pandimensionalContract, setPandimensionalContract] = useState(null)
 
   // INFO FROM SMART Contract
 
@@ -22,7 +22,7 @@ export default function Mint() {
 
   const [saleStarted, setSaleStarted] = useState(false)
 
-  const [bananaPrice, setBananaPrice] = useState(0)
+  const [pandimensionalPrice, setPandimensionalPrice] = useState(0)
 
   useEffect( async() => { 
 
@@ -65,33 +65,33 @@ export default function Mint() {
   async function callContractData(wallet) {
     // let balance = await web3.eth.getBalance(wallet);
     // setWalletBalance(balance)
-    const bananaContract = new window.web3.eth.Contract(ABI, ADDRESS)
-    setBananaContract(bananaContract)
+    const pandimensionalContract = new window.web3.eth.Contract(ABI, ADDRESS)
+    setPandimensionalContract(pandimensionalContract)
 
-    const salebool = await bananaContract.methods.saleIsActive().call() 
+    const salebool = await pandimensionalContract.methods.saleIsActive().call() 
     // console.log("saleisActive" , salebool)
     setSaleStarted(salebool)
 
-    const totalSupply = await bananaContract.methods.totalSupply().call() 
+    const totalSupply = await pandimensionalContract.methods.totalSupply().call() 
     setTotalSupply(totalSupply)
 
-    const bananaPrice = await bananaContract.methods.bananaPrice().call() 
-    setBananaPrice(bananaPrice)
+    const pandimensionalPrice = await pandimensionalContract.methods.pandimensionalPrice().call() 
+    setPandimensionalPrice(pandimensionalPrice)
    
   }
   
-  async function mintBanana(how_many_bananas) {
-    if (bananaContract) {
+  async function mintPandimensional(how_many_pandimensionals) {
+    if (pandimensionalContract) {
  
-      const price = Number(bananaPrice)  * how_many_bananas 
+      const price = Number(pandimensionalPrice)  * how_many_pandimensionals 
 
-      const gasAmount = await bananaContract.methods.mintBoringBanana(how_many_bananas).estimateGas({from: walletAddress, value: price})
+      const gasAmount = await pandimensionalContract.methods.mintPandimensional(how_many_pandimensionals).estimateGas({from: walletAddress, value: price})
       console.log("estimated gas",gasAmount)
 
       console.log({from: walletAddress, value: price})
 
-      bananaContract.methods
-            .mintBoringBanana(how_many_bananas)
+      pandimensionalContract.methods
+            .mintPandimensional(how_many_pandimensionals)
             .send({from: walletAddress, value: price, gas: String(gasAmount)})
             .on('transactionHash', function(hash){
               console.log("transactionHash", hash)
@@ -110,24 +110,24 @@ export default function Mint() {
   return (
     <div id="bodyy" className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Boring Bananas Company</title>
+        <title>Pandimensionals Company</title>
         <link rel="icon" href="/images/favicon.jpg" />
 
-        <meta property="og:title" content="Boring Bananas Co." key="ogtitle" />
-        <meta property="og:description" content="Here at Boring Bananas company, we specialise in the world's finest digital bananas. We've put together a team spanning 3 continents, to bring you some of the most ‍NUTRITIOUS and DELICIOUS
-bananas out known to man." key="ogdesc" />
+        <meta property="og:title" content="Pandimensionals Co." key="ogtitle" />
+        <meta property="og:description" content="Here at Pandimensionals company, we specialise in the world's finest digital pandimensionals. We've put together a team spanning 3 continents, to bring you some of the most ‍NUTRITIOUS and DELICIOUS
+pandimensionals out known to man." key="ogdesc" />
         <meta property="og:type" content="website" key="ogtype" />
-        <meta property="og:url" content="https://boringbananas.co/" key="ogurl"/>
-        <meta property="og:image" content="https://boringbananas.co/images/Hola.gif" key="ogimage"/>
-        <meta property="og:site_name" content="https://boringbananas.co/" key="ogsitename" />
+        <meta property="og:url" content="https://boringpandimensionals.co/" key="ogurl"/>
+        <meta property="og:image" content="https://boringpandimensionals.co/images/Hola.gif" key="ogimage"/>
+        <meta property="og:site_name" content="https://boringpandimensionals.co/" key="ogsitename" />
 
         <meta name="twitter:card" content="summary_large_image" key="twcard"/>
-        <meta property="twitter:domain" content="boringbananas.co" key="twdomain" />
-        <meta property="twitter:url" content="https://boringbananas.co/" key="twurl" />
-        <meta name="twitter:title" content="Boring Bananas Co." key="twtitle" />
-        <meta name="twitter:description" content="Here at boring Bananas company, we specialise in the world's finest digital bananas. We've put together a team spanning 3 continents, to bring you some of the most ‍NUTRITIOUS and DELICIOUS
-bananas out known to man." key="twdesc" />
-        <meta name="twitter:image" content="https://boringbananas.co/images/Hola.gif" key="twimage" />
+        <meta property="twitter:domain" content="boringpandimensionals.co" key="twdomain" />
+        <meta property="twitter:url" content="https://boringpandimensionals.co/" key="twurl" />
+        <meta name="twitter:title" content="Pandimensionals Co." key="twtitle" />
+        <meta name="twitter:description" content="Here at boring Pandimensionals company, we specialise in the world's finest digital pandimensionals. We've put together a team spanning 3 continents, to bring you some of the most ‍NUTRITIOUS and DELICIOUS
+pandimensionals out known to man." key="twdesc" />
+        <meta name="twitter:image" content="https://boringpandimensionals.co/images/Hola.gif" key="twimage" />
       </Head>
 
 
@@ -137,11 +137,11 @@ bananas out known to man." key="twdesc" />
             <nav className="flex flex-wrap flex-row justify-around Poppitandfinchsans">
               <a href="/#about" className="text-4xl text-white hover:text-black m-6">About</a>
               <a href="/mint" className="text-4xl text-white hover:text-black m-6">Mint!</a>
-              <a href="/#traits" className="text-4xl text-white hover:text-black m-6">Banana traits</a>
+              <a href="/#traits" className="text-4xl text-white hover:text-black m-6">Pandimensional traits</a>
               <a href="/#roadmap" className="text-4xl text-white hover:text-black m-6">Roadmap</a>
               <a href="/#team" className="text-4xl text-white hover:text-black m-6">Team</a>
               <a href="/#contact" className="text-4xl text-white hover:text-black m-6">Contact</a>
-              <a href="https://twitter.com/boringbananasco" className="text-4xl  hover:text-white m-6 text-blau">TWITTER</a>
+              <a href="https://twitter.com/boringpandimensionalsco" className="text-4xl  hover:text-white m-6 text-blau">TWITTER</a>
               <a href="https://discord.gg/8Wk9Hp6UyV" className="text-4xl  hover:text-white m-6 text-blau">DISCORD</a>
             </nav>
              
@@ -160,7 +160,7 @@ bananas out known to man." key="twdesc" />
 
             <div className="flex flex-col items-center">
 
-                <span className="flex Poppitandfinchsans text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4 ">TOTAL BANANAS MINTED:  <span className="text-blau text-6xl"> {!signedIn ?  <>-</>  :  <>{totalSupply}</> } / 8888</span></span>
+                <span className="flex Poppitandfinchsans text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none my-4 ">TOTAL PANDIMENSIONALS MINTED:  <span className="text-blau text-6xl"> {!signedIn ?  <>-</>  :  <>{totalSupply}</> } / 8888</span></span>
 
                 <div id="mint" className="flex justify-around  mt-8 mx-6">
                   <span className="flex Poppitandfinchsans text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none px-3 font-bold">GIMME</span>
@@ -169,17 +169,17 @@ bananas out known to man." key="twdesc" />
                                       type="number" 
                                       min="1"
                                       max="20"
-                                      value={how_many_bananas}
-                                      onChange={ e => set_how_many_bananas(e.target.value) }
+                                      value={how_many_pandimensionals}
+                                      onChange={ e => set_how_many_pandimensionals(e.target.value) }
                                       name="" 
                                       className="Poppitandfinchsans pl-4 text-4xl  inline bg-grey-lighter  py-2 font-normal rounded text-grey-darkest  font-bold"
                                   />
                   
-                  <span className="flex Poppitandfinchsans text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none px-3 font-bold">BANANAS!</span>
+                  <span className="flex Poppitandfinchsans text-5xl text-white items-center bg-grey-lighter rounded rounded-r-none px-3 font-bold">PANDIMENSIONALS!</span>
     
                 </div>
                 {saleStarted ? 
-                <button onClick={() => mintBanana(how_many_bananas)} className="mt-4 Poppitandfinchsans text-4xl border-6 bg-blau  text-white hover:text-black p-2 ">MINT {how_many_bananas} bananas for {(bananaPrice * how_many_bananas) / (10 ** 18)} ETH + GAS</button>        
+                <button onClick={() => mintPandimensional(how_many_pandimensionals)} className="mt-4 Poppitandfinchsans text-4xl border-6 bg-blau  text-white hover:text-black p-2 ">MINT {how_many_pandimensionals} pandimensionals for {(pandimensionalPrice * how_many_pandimensionals) / (10 ** 18)} ETH + GAS</button>        
                   : <button className="mt-4 Poppitandfinchsans text-4xl border-6 bg-blau  text-white hover:text-black p-2 ">SALE IS NOT ACTIVE OR NO WALLET IS CONNECTED</button>        
             
               }

@@ -1,0 +1,19 @@
+{
+    "image": "0.png",
+    "tokenId": 0,
+    "name": "PTCO",
+    "attributes": [
+        {
+            "trait_type": "Background",
+            "value": "Blue"
+        },
+        {
+            "trait_type": "Head",
+            "value": "Bowl"
+        },
+        {
+            "trait_type": "Body",
+            "value": "Office"
+        }
+    ]
+}

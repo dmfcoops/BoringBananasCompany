@@ -1,0 +1,19 @@
+{
+    "image": "3.png",
+    "tokenId": 3,
+    "name": "PTCO",
+    "attributes": [
+        {
+            "trait_type": "Background",
+            "value": "Blue"
+        },
+        {
+            "trait_type": "Head",
+            "value": "Arrow"
+        },
+        {
+            "trait_type": "Body",
+            "value": "Skandi Jumper"
+        }
+    ]
+}

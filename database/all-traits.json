@@ -1,0 +1,37 @@
+[
+    {
+        "Background": "Blue",
+        "Head": "Bowl",
+        "Body": "Office",
+        "tokenId": 0,
+        "imageIPFS": "QmckYPwb1ypxoJNbRpTVhXdXXGXTPGf668Gip6AqTEUos3"
+    },
+    {
+        "Background": "Rainbow",
+        "Head": "Brain Transplant",
+        "Body": "Space Wizard",
+        "tokenId": 1,
+        "imageIPFS": "QmQo2BHqvFAU3uy1HrcF3GNmU9q8DTeScNV2azjmqzxyaS"
+    },
+    {
+        "Background": "Yellow",
+        "Head": "Arrow",
+        "Body": "! Vibe",
+        "tokenId": 2,
+        "imageIPFS": "QmYLtmGvHCGWwNVLjoYkfBvxph1CLYFEa435KprFDLsRk2"
+    },
+    {
+        "Background": "Blue",
+        "Head": "Arrow",
+        "Body": "Skandi Jumper",
+        "tokenId": 3,
+        "imageIPFS": "QmR8RKWxRq45f2HAKLJjtJdAktLXfaLPAPmZrprPu1hUpM"
+    },
+    {
+        "Background": "Orange",
+        "Head": "Brain Transplant",
+        "Body": "Skandi Jumper",
+        "tokenId": 4,
+        "imageIPFS": "QmdbASeBXxqdLhRj5LesAzcs4H3qBV1t7eE9CKHbKir6ZS"
+    }
+]
