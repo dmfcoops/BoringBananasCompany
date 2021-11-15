@@ -1881,27 +1881,24 @@ abstract contract Ownable is Context {
 }
 
 
-// Following the recent worldwide pandemic, emerging reports suggest that several pandimensional species have begun exhibiting strange characteristics. Our research team located across the globe has commenced efforts to study and document these unusual phenomena.
 
-// Concerned about parties trying to suppress our research, the team has opted to store our findings on the blockchain to prevent interference. Although this is a costly endeavour, our mission has never been clearer.
+// Welcome to PTCO™, the only NFT company trading pandimensionally.
 
-// The fate of the world's pandimensionals depends on it.
+//Rescued from THE VOID starship that crashed in the Arctic Sea in 1985, these tiny Pandimensional creatures known locally as the Phanackapans are skilled warp-drive engineers, despite their cherryade addiction.
 
-// from our website (https://boringpandimensionals.co)
+//In 1985, a severely damaged VOID starship breached the Earth’s Interplanetary Defence Barrier. As the stricken planet killer hit the Arctic Sea it split in two, liberating the Phanackapans™ from their bonds to their abusive VOID overlords. 
 
-// BoringPandimensionalsCo is a community-centered enterprise focussed on preserving our research about the emerging reports that several pandimensional species have begun exhibiting strange characteristics following the recent worldwide pandemic. 
-// Our research team located across the globe has commenced efforts to study and document these unusual phenomena. 
-// Concerned about parties trying to suppress our research, the team has opted to store our findings on the blockchain to prevent interference. 
-// Although this is a costly endeavour, our mission has never been clearer. 
-// The fate of the world's pandimensionals depends on it.
+//In the years that followed, the Phanackapans™ thrived under the sea, using their powers to manipulate matter to build a home for themselves. Their only contact with the outside world has been through the 'Cherryade Racket'.  They use this precious liquid in their notorious orgiastic festivals. 
 
-// PANDIMENSIONAL RESEARCH TEAM:
+//But, a divide has grown within the small Phanackapan™ community over the years and a small group of 11,111 Phanackapans™ have decided to fight their addiction and plan to put their powers to use by creating a cleaner environment for their offspring.
 
-// VEE - @thedigitalvee
-// MJDATA - @ChampagneMan
-// MADBOOGIE - @MadBoogieArt
-// JUI - @mz09art
-// BERK - @berkozdemir
+// from our website (https://pandimensional.io)
+
+// PANDIMENSIONAL TEAM:
+
+// PJ COOPER - @MrPJCooper
+// DR GRIPPA - @drgrippa
+// DARRYL - @darrylsparey
 
 pragma solidity ^0.7.0;
 pragma abicoder v2;
