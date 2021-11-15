@@ -293,7 +293,7 @@ abstract contract ERC165 is IERC165 {
      */
     mapping(bytes4 => bool) private _supportedInterfaces;
 
-    constructor () internal {
+    constructor () {
         // Derived contracts need only register support for their own interfaces,
         // we register support for ERC165 itself here
         _registerInterface(_INTERFACE_ID_ERC165);
@@ -1423,7 +1423,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata, IERC721Enumerable 
     /**
      * @dev Initializes the contract by setting a `name` and a `symbol` to the token collection.
      */
-    constructor (string memory name_, string memory symbol_) public {
+    constructor (string memory name_, string memory symbol_) {
         _name = name_;
         _symbol = symbol_;
 
@@ -1836,7 +1836,7 @@ abstract contract Ownable is Context {
     /**
      * @dev Initializes the contract setting the deployer as the initial owner.
      */
-    constructor () internal {
+    constructor () {
         address msgSender = _msgSender();
         _owner = msgSender;
         emit OwnershipTransferred(address(0), msgSender);
@@ -1903,7 +1903,7 @@ abstract contract Ownable is Context {
 pragma solidity ^0.7.0;
 pragma abicoder v2;
 
-contract BoringPandimensionalsCo is ERC721, Ownable {
+contract PandimensionalTradingCo is ERC721, Ownable {
     
     using SafeMath for uint256;
 
@@ -1930,7 +1930,7 @@ contract BoringPandimensionalsCo is ERC721, Ownable {
     
     event licenseisLocked(string _licenseText);
 
-    constructor() ERC721("Boring Pandimensionals Co.", "BBC") { }
+    constructor() ERC721("Pandimensional Trading Co.", "BBC") { }
     
     function withdraw() public onlyOwner {
         uint balance = address(this).balance;
@@ -1995,7 +1995,7 @@ contract BoringPandimensionalsCo is ERC721, Ownable {
     }
     
     
-    function mintBoringPandimensional(uint numberOfTokens) public payable {
+    function mintPandimensional(uint numberOfTokens) public payable {
         require(saleIsActive, "Sale must be active to mint Pandimensional");
         require(numberOfTokens > 0 && numberOfTokens <= maxPandimensionalPurchase, "Can only mint 20 tokens at a time");
         require(totalSupply().add(numberOfTokens) <= MAX_PANDIMENSIONALS, "Purchase would exceed max supply of Pandimensionals");
