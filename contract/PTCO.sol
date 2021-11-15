@@ -1882,7 +1882,7 @@ abstract contract Ownable is Context {
 
 
 
-// Welcome to PTCO™, the only NFT company trading pandimensionally.
+// Welcome to PTCO™, the only NFT company trading pandimensionally!
 
 //Rescued from THE VOID starship that crashed in the Arctic Sea in 1985, these tiny Pandimensional creatures known locally as the Phanackapans are skilled warp-drive engineers, despite their cherryade addiction.
 
